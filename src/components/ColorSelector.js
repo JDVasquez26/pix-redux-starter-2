@@ -25,8 +25,7 @@ const { selectedColor } = useSelector((state) => state.stateValues);
 const dispatch = useDispatch();
 
 const handleColorChange = (evt) => {//take an event, 
-    dispatch(pickColor(evt.target.value));
-//call the dispatch function and pass it pickColor,
+    dispatch(pickColor(evt.target.value));//call the dispatch function and pass it pickColor..
 //pass pickColor the event.target.value (the value of the currently selected option)
   }
 

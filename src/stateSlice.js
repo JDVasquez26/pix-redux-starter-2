@@ -14,15 +14,19 @@ export const stateSlice = createSlice({ // call this function
 // function needs to create a new row (of empty strings) and push
 //The state value that is passed into this function represents the state of our slice. 
 //When we call any of these reducer functions, we never need to pass this in ourselves. 
-        addRow(state) {
+        addRow(state) { //addRow correponds to our Table's add Row button that fills in our grid with # of rows
             const newRow = Array(NUM_COLUMNS).fill("");
             state.grid.push(newRow);
           },
+
+          //PickColor will be passed through select tag inside ColorSelector, to help us with state of color
 //This function needs to be passed a value (which will come off of our event obj), 
 //which will become the new selectedColor in our state
           pickColor(state, action) { //variable action, which is passed to pickColor, has a property of payload.  
             state.selectedColor = action.payload;//This payload property represents whatever you pass into this function when you call it. In this case, a string representing the new selectedColor.
           },
+
+          //colorize will be passed on the TableCell.js to help us "color" the specific grid coordinates, that is why it is an object...
 //We need to pass this method two things, the row and column. 
 //The row and column will be used to reference the indexes of our grid array, 
 //which will point us to the cell in question.
